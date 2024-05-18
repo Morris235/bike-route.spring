@@ -1,0 +1,10 @@
+# route.graphql
+query ($id: ID){
+    route(id: $id) {
+        id
+        name
+        rate
+        finish_time
+        owner_id
+    }
+}
