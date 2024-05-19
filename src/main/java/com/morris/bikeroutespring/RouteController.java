@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class RouteController {
     @QueryMapping
-    public BikeRoute routeById(@Argument String id) {
-        return BikeRoute.getById(id);
+    public Route routeById(@Argument String id) {
+        return Route.getById(id);
     }
 
     // @QueryMapping
