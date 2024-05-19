@@ -1,11 +1,10 @@
 type Query {
-    routeList : [route]
-    route(id: ID): Route
+    routeById(id: ID): Route
 }
 
 type Route {
-    id: ID!
-    name: String!
+    id: ID
+    name: String
     rate: Int
     finish_time: String
     owner_id: String
