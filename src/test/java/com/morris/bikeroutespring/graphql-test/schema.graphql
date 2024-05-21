@@ -1,0 +1,30 @@
+# Root Query 정의
+# 조회 요청을 할때 getAllRoute를 요청하고 반환값은 Route객체가 됨을 의미
+# getRouteById 요청시 보내는 파라미터는 id로 정의하며 id는 int타입을 의미
+type Query {
+    getAllRoute:[Route]
+    getRouteById(id: String):Route
+}
+
+# Root Mutation 정의 (등록, 수정, 삭제)
+# updateName 요청시 id와 name 값을 파라미터로 보내며 Route 객체를 받는다
+# input타입을 정의하여 입력 파라미터 값을 묶어서 사용할 수 있다.
+type Mutation {
+    updateName(id:String, name:String):Route
+    updateNameByInputObject(input:NameInput)
+}
+
+# Route 객체 정의
+type Route {
+    id: ID!
+    name: String
+    rate: Int
+    finish_time: String
+    owner_id: String
+}
+
+# 입력 파라미터로 사용될 입력타입의 NameInput 정의
+input NameInput {
+    id:Int,
+    name:String
+}

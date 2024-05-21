@@ -1,11 +1,22 @@
 type Query {
-    routeById(id: ID): Route
+    getAllRoute:[Route]
+    getRouteById(id: String):Route
+}
+
+type Mutation {
+    updateName(id:String, name:String):Route
+    updateNameByInputObject(input:NameInput)
 }
 
 type Route {
-    id: ID
+    id: ID!
     name: String
     rate: Int
     finish_time: String
     owner_id: String
+}
+
+input NameInput {
+    id:Int,
+    name:String
 }
