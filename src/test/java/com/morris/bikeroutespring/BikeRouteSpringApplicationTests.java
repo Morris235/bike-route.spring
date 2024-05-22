@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.morris.bikeroutespring.entity.RouteEntity;
+import com.morris.bikeroutespring.entity.Route;
 
 @SpringBootTest
 class BikeRouteSpringApplicationTests {
@@ -16,15 +16,14 @@ class BikeRouteSpringApplicationTests {
 
 	@Test
 	void testJpa(){
-		RouteEntityTest r1 = new RouteEntityTest();
-		List<RouteEntity> all = routeRepositoryTest.findAll();
-		
-		System.out.println("find all test : " + all.get(0).getName());
+		Route r1 = new Route();
+		List<Route> all = routeRepositoryTest.findAll();
+		System.out.println("find all test : " + all.get(0));
 	}
 
 	@Test
 	void testJPAQuery() {
-		RouteEntity repo = routeRepositoryTest.findByName("rabbit");
+		Route repo = routeRepositoryTest.findByName("rabbit");
 		System.out.println("find by name for finish time test : " + repo.getFinishTime());
 	}
 
