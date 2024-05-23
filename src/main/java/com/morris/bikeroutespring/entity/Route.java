@@ -31,22 +31,25 @@ public class Route {
     private String finishTime;
     private String ownerId;
 
-    public Route(String id2, String rate2, String finishTime2, String ownerId2) {
-        //TODO Auto-generated constructor stub
+    public Route(String id, String rate, String finishTime, String ownerId) {
+        this.id =id;
+        this.rate = rate;
+        this.finishTime = finishTime;
+        this.ownerId = ownerId;
     }
 
-    @Builder
-    public static Route toEntity (
-        String id,
-        String rate,
-        String finishTime,
-        String ownerId
-    ) {
-        return new Route(
-            id,
-            rate,
-            finishTime,
-            ownerId
-        );
-    }
+    // @Builder
+    // public static Route toEntity (
+    //     String id,
+    //     String rate,
+    //     String finishTime,
+    //     String ownerId
+    // ) {
+    //     return new Route(
+    //         id,
+    //         rate,
+    //         finishTime,
+    //         ownerId
+    //     );
+    // }
 }

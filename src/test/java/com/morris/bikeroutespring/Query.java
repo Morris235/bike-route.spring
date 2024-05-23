@@ -1,48 +1,35 @@
-package com.morris.bikeroutespring.resolver;
+package com.morris.bikeroutespring;
 
-import java.util.List;
-import java.util.Optional;
-
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Component;
 
-import com.morris.bikeroutespring.RouteRepository;
 import com.morris.bikeroutespring.entity.Route;
 
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import graphql.scalars.ExtendedScalars;
 import graphql.schema.GraphQLScalarType;
 
-// Root Query? -> 작동하지 않음
-@Component
+@SpringBootTest
 public class Query implements GraphQLQueryResolver {
-    @Autowired
     private RouteRepository routeRepository;
 
     GraphQLScalarType longScalar = ExtendedScalars.newAliasedScalar("Long").aliasedScalar(ExtendedScalars.GraphQLLong)
             .build();
 
+    @Autowired
     public Query(RouteRepository routeRepository) {
         this.routeRepository = routeRepository;
     }
 
+    @Test
     @QueryMapping
-    public List<Route> findAllRoutes() {
+    public Iterable<Route> findAllRoute() {
         return routeRepository.findAll();
     }
 
-    @QueryMapping
-    public Route findByName(String name) {
-        return routeRepository.findByName(name);
-    }
-
-    @QueryMapping
-    public Optional<Route> getRouteById(String id) {
-        return routeRepository.findById(id);
-    }
-
-    @QueryMapping
     public long countRoute() {
         return routeRepository.count();
     }

@@ -1,0 +1,18 @@
+type Route {
+    id: ID!
+    name: String!
+    rate: Int
+    finish_time: String
+    owner_id: String
+}
+
+type Query {
+    findAllRoutes:[Route]
+    findByName(name:String):Route
+    getRouteById(id: String):Route
+}
+
+input NameInput {
+    id:Int,
+    name:String
+}
