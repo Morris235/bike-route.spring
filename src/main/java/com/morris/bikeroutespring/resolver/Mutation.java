@@ -18,12 +18,12 @@ public class Mutation implements GraphQLMutationResolver{
         this.routeRepository = routeRepository;
     }
 
-    public Route createRoute(String name) {
-        Route route = new Route();
-        route.setName(name);
-        // route.save(route);
-        return route;
-    }
+    // public Route createRoute(String name) {
+    //     Route route = new Route();
+    //     route.setName(name);
+    //     // route.save(route);
+    //     return route;
+    // }
 
     public boolean deleteRoute(String id) {
         // RouteRepository.deleteById(id);

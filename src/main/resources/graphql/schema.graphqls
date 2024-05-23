@@ -3,14 +3,15 @@ type Query {
     getRouteById(id: String):Route
 }
 
-type Mutation {
-    updateName(id:String, name:String):Route
-    updateNameByInputObject(input:NameInput)
-}
+# 에러 발생
+# type Mutation {
+#     updateName(id:String, name:String):Route
+#     updateNameByInputObject(input:NameInput)
+# }
 
 type Route {
     id: ID!
-    name: String
+    name: String!
     rate: Int
     finish_time: String
     owner_id: String

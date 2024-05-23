@@ -1,0 +1,5 @@
+{
+    "name": "Bike-Route",
+    "schemaPath": "src/main/resources/graphql/schema.graphql",
+    "extensions": {}
+}

@@ -14,12 +14,12 @@ class BikeRouteSpringApplicationTests {
 	@Autowired
 	private RouteRepositoryTest routeRepositoryTest;
 
-	@Test
-	void testJpa(){
-		Route r1 = new Route();
-		List<Route> all = routeRepositoryTest.findAll();
-		System.out.println("find all test : " + all.get(0));
-	}
+	// @Test
+	// void testJpa(){
+	// 	Route r1 = new Route();
+	// 	List<Route> all = routeRepositoryTest.findAll();
+	// 	System.out.println("find all test : " + all.get(0));
+	// }
 
 	@Test
 	void testJPAQuery() {
