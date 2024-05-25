@@ -2,6 +2,7 @@ package com.morris.bikeroutespring.resolver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import com.morris.bikeroutespring.RouteRepository;
 import com.morris.bikeroutespring.entity.Route;
@@ -10,6 +11,7 @@ import graphql.kickstart.tools.GraphQLMutationResolver;
 
 // Root Mutation
 @Component
+@Controller
 public class Mutation implements GraphQLMutationResolver{
     private RouteRepository routeRepository;
 

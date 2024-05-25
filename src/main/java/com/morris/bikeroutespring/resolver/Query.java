@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.morris.bikeroutespring.RouteRepository;
 import com.morris.bikeroutespring.entity.Route;
@@ -13,9 +15,13 @@ import com.morris.bikeroutespring.entity.Route;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import graphql.scalars.ExtendedScalars;
 import graphql.schema.GraphQLScalarType;
+import lombok.RequiredArgsConstructor;
 
 // Root Query? -> 작동하지 않음
+@RequiredArgsConstructor
 @Component
+@Transactional(readOnly = true)
+// @Controller
 public class Query implements GraphQLQueryResolver {
     @Autowired
     private RouteRepository routeRepository;
