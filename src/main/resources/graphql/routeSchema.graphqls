@@ -4,6 +4,8 @@ type Route {
     rate: Int
     finish_time: String
     owner_id: String
+    created: String
+    deleted: Boolean
 }
 
 type Query {
@@ -15,4 +17,10 @@ type Query {
 input NameInput {
     id:Int,
     name:String
+}
+
+type Mutation {
+    createRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route!
+    updateRouteById(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route
+    deleteRouteById(id: ID!): Boolean
 }

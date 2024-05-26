@@ -25,6 +25,6 @@ type Route {
 
 # 입력 파라미터로 사용될 입력타입의 NameInput 정의
 input NameInput {
-    id:Int,
+    id:ID,
     name:String
 }

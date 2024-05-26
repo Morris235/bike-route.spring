@@ -20,22 +20,27 @@ import jakarta.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+// @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
 public class Route {
     @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
-    private String rate;
+    private int rate;
     private String finishTime;
-    private String ownerId;
+    private String owner_id;
+    private String created;
+    private boolean deleted;
 
-    public Route(String id, String rate, String finishTime, String ownerId) {
-        this.id =id;
+    public Route(String id, String name, int rate, String finishTime, String owner_id, String created, boolean deleted) {
+        this.id = id;
+        this.name = name;
         this.rate = rate;
         this.finishTime = finishTime;
-        this.ownerId = ownerId;
+        this.owner_id = owner_id;
+        this.created = created;
+        this.deleted = deleted;
     }
 
     // @Builder
