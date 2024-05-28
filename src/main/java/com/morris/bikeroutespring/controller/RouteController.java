@@ -22,7 +22,7 @@ public class RouteController {
     }
     
     @QueryMapping
-    public List<Route> findAllRoutes() {
+    public List<Route> routes() {
         return routeRepository.findAll();
     }
 
