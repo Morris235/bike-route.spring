@@ -14,13 +14,18 @@ type Query {
     getRouteById(id: String):Route
 }
 
-input NameInput {
-    id:Int,
-    name:String
+input RouteInput {
+    id: ID!
+    name: String!
+    rate: Int
+    finish_time: String
+    owner_id: String
+    created: String
+    deleted: Boolean
 }
 
 type Mutation {
     createRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route!
-    updateRouteById(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route
+    updateRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route
     deleteRouteById(id: ID!): Boolean
 }

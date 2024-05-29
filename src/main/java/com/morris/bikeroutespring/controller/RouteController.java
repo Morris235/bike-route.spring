@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import com.morris.bikeroutespring.RouteRepository;
 import com.morris.bikeroutespring.entity.Route;
+import com.morris.bikeroutespring.entity.RouteInput;
 
 @Controller
 public class RouteController {
@@ -33,7 +34,7 @@ public class RouteController {
     }
 
     @MutationMapping
-    public Route updateRouteById(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate, @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
+    public Route updateRoute(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate, @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
         Route route = routeRepository.findById(id).get();
         if (route == null) return null;
         route = constructRoute(id, name, rate, finishTime, owner_id);
