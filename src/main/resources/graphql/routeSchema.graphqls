@@ -9,7 +9,7 @@ type Route {
 }
 
 type Query {
-    routes:[Route]
+    findAllRoutes:[Route]
     findByName(name:String):Route
     getRouteById(id: String):Route
 }
