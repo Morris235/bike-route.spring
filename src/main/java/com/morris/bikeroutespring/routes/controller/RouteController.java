@@ -1,4 +1,4 @@
-package com.morris.bikeroutespring.controller;
+package com.morris.bikeroutespring.routes.controller;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import com.morris.bikeroutespring.RouteRepository;
-import com.morris.bikeroutespring.entity.Route;
-import com.morris.bikeroutespring.entity.RouteInput;
+import com.morris.bikeroutespring.routes.entity.Route;
+import com.morris.bikeroutespring.routes.entity.RouteInput;
+import com.morris.bikeroutespring.routes.repository.RouteRepository;
 
 @Controller
 public class RouteController {

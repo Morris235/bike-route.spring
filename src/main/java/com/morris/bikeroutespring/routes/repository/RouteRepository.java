@@ -1,8 +1,8 @@
-package com.morris.bikeroutespring;
+package com.morris.bikeroutespring.routes.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.morris.bikeroutespring.entity.Route;
+import com.morris.bikeroutespring.routes.entity.Route;
 
 public interface RouteRepository extends JpaRepository<Route, String>{
     Route findByName(String name); 

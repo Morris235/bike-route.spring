@@ -1,4 +1,4 @@
-package com.morris.bikeroutespring.entity;
+package com.morris.bikeroutespring.routes.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.morris.bikeroutespring.entity;
+package com.morris.bikeroutespring.routes.entity;
 
 public record RouteInput(String id, String name, int rate, String finishTime, String owner_id) {
     
