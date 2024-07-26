@@ -1,0 +1,18 @@
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+    province: String
+    birth: String
+    distance_driven: Float
+    city: String
+    created: String
+    deleted: Boolean
+}
+
+# type Mutation {
+#     createRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route!
+#     updateRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route
+#     deleteRouteById(id: ID!): Boolean
+# }

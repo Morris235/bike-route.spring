@@ -8,12 +8,6 @@ type Route {
     deleted: Boolean
 }
 
-type Query {
-    findAllRoutes:[Route]
-    findByName(name:String):Route
-    getRouteById(id: String):Route
-}
-
 input RouteInput {
     id: ID!
     name: String!

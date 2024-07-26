@@ -1,0 +1,7 @@
+type Query {
+    findAllUsers:[User]
+    findByIdAndName(name:String):User
+    findAllRoutes:[Route]
+    findByName(name:String):Route
+    getRouteById(id: String):Route
+}
