@@ -9,7 +9,6 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import com.morris.bikeroutespring.routes.entity.Route;
-import com.morris.bikeroutespring.routes.entity.RouteInput;
 import com.morris.bikeroutespring.routes.repository.RouteRepository;
 
 @Controller
@@ -21,22 +20,25 @@ public class RouteController {
         Route route = new Route(id, name, rate, finishTime, owner_id, null, false);
         return route;
     }
-    
+
     @QueryMapping
     public List<Route> findAllRoutes() {
         return routeRepository.findAll();
     }
 
     @MutationMapping
-    public Route createRoute(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate, @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
+    public Route createRoute(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate,
+            @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
         Route route = constructRoute(id, name, rate, finishTime, owner_id);
         return routeRepository.save(route);
     }
 
     @MutationMapping
-    public Route updateRoute(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate, @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
+    public Route updateRoute(@Argument("id") String id, @Argument("name") String name, @Argument("rate") int rate,
+            @Argument("finish_time") String finishTime, @Argument("owner_id") String owner_id) {
         Route route = routeRepository.findById(id).get();
-        if (route == null) return null;
+        if (route == null)
+            return null;
         route = constructRoute(id, name, rate, finishTime, owner_id);
         return routeRepository.save(route);
     }
@@ -44,7 +46,8 @@ public class RouteController {
     @MutationMapping
     public boolean deleteRouteById(@Argument("id") String id) {
         Route route = routeRepository.findById(id).get();
-        if (route == null) return false;
+        if (route == null)
+            return false;
         routeRepository.delete(route);
         return true;
     }

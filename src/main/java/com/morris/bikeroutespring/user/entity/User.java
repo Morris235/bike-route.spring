@@ -21,10 +21,10 @@ public class User {
     private String city;
     private int distanceDriven;
     private String created;
-    private String deleted;
-    
+    private boolean deleted;
+
     public User(String id, String name, String birth, String email, String password, String province, String city,
-            int distanceDriven, String created, String deleted) {
+            int distanceDriven, String created, boolean deleted) {
         this.id = id;
         this.name = name;
         this.birth = birth;
