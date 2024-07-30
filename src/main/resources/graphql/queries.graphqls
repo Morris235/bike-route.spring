@@ -1,7 +1,7 @@
 type Query {
     findAllUsers:[User]
     findByIdAndName(name:String):User
-    findAllRoutes:[Route]
-    findByName(name:String):Route
-    getRouteById(id: String):Route
+    findAllCourse:[Course]
+    findByName(name:String):Course
+    getCourseById(id: String):Course
 }

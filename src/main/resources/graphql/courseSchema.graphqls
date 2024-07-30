@@ -1,4 +1,4 @@
-type Route {
+type Course {
     id: ID!
     name: String!
     rate: Int
@@ -8,7 +8,7 @@ type Route {
     deleted: Boolean
 }
 
-input RouteInput {
+input CourseInput {
     id: ID!
     name: String!
     rate: Int
@@ -19,7 +19,7 @@ input RouteInput {
 }
 
 type Mutation {
-    createRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route!
-    updateRoute(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Route
-    deleteRouteById(id: ID!): Boolean
+    createCourse(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Course!
+    updateCourse(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Course
+    deleteCourseById(id: ID!): Boolean
 }

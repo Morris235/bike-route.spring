@@ -1,4 +1,4 @@
-package com.morris.bikeroutespring.routes.entity;
+package com.morris.bikeroutespring.course.entity;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -20,7 +20,7 @@ import jakarta.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 // @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity
-public class Route {
+public class Course {
     @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
@@ -31,7 +31,7 @@ public class Route {
     private String created;
     private boolean deleted;
 
-    public Route(String id, String name, int rate, String finishTime, String owner_id, String created,
+    public Course(String id, String name, int rate, String finishTime, String owner_id, String created,
             boolean deleted) {
         this.id = id;
         this.name = name;
