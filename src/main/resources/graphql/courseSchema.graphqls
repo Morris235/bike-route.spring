@@ -1,5 +1,5 @@
 type Course {
-    id: ID!
+    id: String!
     name: String!
     rate: Int
     finish_time: String
@@ -9,7 +9,7 @@ type Course {
 }
 
 input CourseInput {
-    id: ID!
+    id: String!
     name: String!
     rate: Int
     finish_time: String
@@ -19,7 +19,7 @@ input CourseInput {
 }
 
 type Mutation {
-    createCourse(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Course!
-    updateCourse(id: ID!, name: String!, rate: Int, finish_time: String, owner_id: String): Course
-    deleteCourseById(id: ID!): Boolean
+    createCourse(id: String!, name: String!, rate: Int, finish_time: String, owner_id: String): Course!
+    updateCourse(id: String!, name: String!, rate: Int, finish_time: String, owner_id: String): Course
+    deleteCourseById(id: String!): Boolean
 }

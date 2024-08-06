@@ -4,7 +4,15 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.UUID;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 // /*
@@ -22,8 +30,10 @@ import jakarta.persistence.Id;
 @Entity
 public class Course {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name="uuid2", strategy = "uuid2")
+    @Column(name="id", columnDefinition = "BINARY(16)")
+    private UUID id;
     private String name;
     private int rate;
     private String finishTime;
@@ -31,7 +41,7 @@ public class Course {
     private String created;
     private boolean deleted;
 
-    public Course(String id, String name, int rate, String finishTime, String owner_id, String created,
+    public Course(UUID id, String name, int rate, String finishTime, String owner_id, String created,
             boolean deleted) {
         this.id = id;
         this.name = name;
