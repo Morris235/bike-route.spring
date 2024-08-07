@@ -9,6 +9,4 @@ import com.morris.bikeroutespring.course.entity.Course;
 public interface CourseRepository extends JpaRepository<Course, UUID>{
     Course findByName(String name); 
     Course findByIdAndName(UUID id, String name);
-    // RouteEntity save(RouteEntity route);
-    // RouteEntity deleteById(String id);
 }

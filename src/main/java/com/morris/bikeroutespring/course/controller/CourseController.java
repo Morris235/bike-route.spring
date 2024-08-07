@@ -31,7 +31,9 @@ public class CourseController {
 
     @QueryMapping
     public List<Course> findAllCourse() {
-        return courseRepository.findAll();
+        List<Course> courses = courseRepository.findAll();
+        courses.removeIf((item) -> item.isDeleted() == true);
+        return courses;
     }
 
     @MutationMapping
@@ -56,7 +58,8 @@ public class CourseController {
         Course course = courseRepository.findById(id).get();
         if (course == null)
             return false;
-        courseRepository.delete(course);
+        course.setDeleted(true);
+        courseRepository.save(course);
         return true;
     }
 }
