@@ -1,5 +1,6 @@
 package com.morris.bikeroutespring.course.controller;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -20,10 +21,11 @@ public class CourseController {
     private CourseRepository courseRepository;
 
     public Course constructCourse(UUID id, String name, int rate, String finishTime, String owner_id) {
-        LocalDate created = LocalDate.now();
+        LocalDate now = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        created.format(formatter);
-        Course course = new Course(id, name, rate, finishTime, owner_id, created.toString(), false);
+        now.format(formatter);
+        Date created = Date.valueOf(now);
+        Course course = new Course(id, name, rate, finishTime, owner_id, created, false);
         return course;
     }
 
@@ -45,7 +47,7 @@ public class CourseController {
         Course course = courseRepository.findById(id).get();
         if (course == null)
             return null;
-            course = constructCourse(id, name, rate, finishTime, owner_id);
+        course = constructCourse(id, name, rate, finishTime, owner_id);
         return courseRepository.save(course);
     }
 

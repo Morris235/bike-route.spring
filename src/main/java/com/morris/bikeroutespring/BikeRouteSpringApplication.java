@@ -15,9 +15,4 @@ public class BikeRouteSpringApplication {
     public graphql.schema.GraphQLScalarType extendedScalarLong() {
         return graphql.scalars.ExtendedScalars.GraphQLLong;
     }
-	
-    // @GetMapping("/hello2")
-    // public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-    //   return String.format("Hello %s!", name);
-    // }
 }
